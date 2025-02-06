@@ -1,2 +1,2 @@
-# bdrelacionales
-Base de datos relacionales
+# Paolo Nicholas Valdez Bernal
+4AVP
