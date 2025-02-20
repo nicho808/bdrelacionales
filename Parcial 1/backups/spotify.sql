@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2025 a las 02:10:17
+-- Tiempo de generación: 20-02-2025 a las 01:10:54
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -33,6 +33,20 @@ CREATE TABLE `artistas` (
   `Nombre` varchar(100) NOT NULL,
   `descripcion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `artistas`
+--
+
+INSERT INTO `artistas` (`id`, `Nombre`, `descripcion`) VALUES
+(1, 'Kanye West', 'Rapero de diferentes generos'),
+(2, 'Taylor Swift', 'Cantante y compositora de pop'),
+(3, 'Slipknot', 'Grupo de varios miembros de metal'),
+(4, 'New Jeans', 'Grupo de 5 integrantes cantantes de K-Pop'),
+(5, 'Skrillex', 'DJ de musica electronica con corte de lesbiana'),
+(6, 'Katy Perry', 'Cantante de Pop'),
+(7, 'Snoop Dogg', 'Rapero de long beach especializado en G-Funk'),
+(8, 'Caifanes', 'Caifanes es una banda de rock mexicana formada en la Ciudad de México en 1986');
 
 -- --------------------------------------------------------
 
@@ -85,6 +99,20 @@ CREATE TABLE `generos` (
   `Nombre` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `generos`
+--
+
+INSERT INTO `generos` (`id`, `Nombre`) VALUES
+(1, 'Metal'),
+(2, 'Rock'),
+(3, 'Hip-Hop'),
+(4, 'K-Pop'),
+(5, 'Pop'),
+(6, 'Jazz'),
+(7, 'Electronica'),
+(8, 'Reggaeton');
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +124,17 @@ CREATE TABLE `membresias` (
   `descripcion` varchar(100) NOT NULL,
   `precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `membresias`
+--
+
+INSERT INTO `membresias` (`id`, `descripcion`, `precio`) VALUES
+(1, 'Gratis', 0),
+(2, 'Premium Individual', 129),
+(3, 'Estudiantes', 69),
+(4, 'Duo', 169),
+(5, 'Familiar', 199);
 
 -- --------------------------------------------------------
 
@@ -138,6 +177,14 @@ CREATE TABLE `usuarios` (
   `correo` varchar(300) NOT NULL,
   `membresia_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `Nombre`, `correo`, `membresia_id`) VALUES
+(1, 'nicho808', 'peanutznico@gmail.com', 2),
+(2, 'Guillermo Wong', 'nosubogordas666@yahoo.com', 5);
 
 --
 -- Índices para tablas volcadas
@@ -215,7 +262,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `artistas_canciones`
@@ -239,13 +286,13 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `membresias`
 --
 ALTER TABLE `membresias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist`
@@ -263,7 +310,7 @@ ALTER TABLE `playlist_canciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
